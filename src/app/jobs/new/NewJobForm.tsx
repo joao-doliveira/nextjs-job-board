@@ -55,7 +55,7 @@ export default function NewJobForm() {
   }
 
   return (
-    <main className="max-w-3x1 m-auto my-16 space-y-10">
+    <main className="m-auto my-10 max-w-5xl space-y-10 px-3">
       <div className="space-y-5 text-center">
         <H1>Find your perfect developer</H1>
         <p className="text-muted-foreground">
