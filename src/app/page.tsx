@@ -10,6 +10,7 @@ interface PageProps {
     type?: string;
     location?: string;
     remote?: string;
+    page?: string;
   };
 }
 
@@ -32,13 +33,16 @@ export function generateMetadata({
 }: PageProps): Metadata {
   return {
     title: `${getTitle({
-      q, type, location, remote: remote === "true"
+      q,
+      type,
+      location,
+      remote: remote === "true",
     })} | Flow Jobs`,
   };
 }
 
 export default async function Home({
-  searchParams: { q, type, location, remote },
+  searchParams: { q, type, location, remote, page },
 }: PageProps) {
   const filterValues: JobFilterValues = {
     q,
@@ -54,7 +58,7 @@ export default async function Home({
       </div>
       <section className="flex flex-col gap-4 md:flex-row">
         <JobFilterSidebar defaultValues={filterValues} />
-        <JobResults filterValues={filterValues} />
+        <JobResults page={page ? parseInt(page) : undefined} filterValues={filterValues} />
       </section>
     </main>
   );
