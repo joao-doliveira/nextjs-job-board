@@ -4,6 +4,7 @@ import logo from "@/assets/logo.png";
 import { Button } from "./ui/button";
 
 export default function Navbar() {
+  const pathname = "jobs/new";
   return (
     <header className="shadow-sm">
       <nav className="max-w-5x1 m-auto flex items-center justify-between px-3 py-5">
@@ -12,7 +13,7 @@ export default function Navbar() {
           <span className="text-1 font-bold tracking-tight">Flow jobs</span>
         </Link>
         <Button asChild>
-            <Link href="jobs/new">Post a job</Link>
+          <Link href={"/" + pathname}>Post a job</Link>
         </Button>
       </nav>
     </header>
